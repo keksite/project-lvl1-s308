@@ -2,7 +2,7 @@
   "name": "brain-games-keksite",
   "version": "1.1.0",
   "description": "brain games project for hexlet cources",
-  "keywords":"braingames, hexlet, cources, lvl1, project",
+  "keywords": "braingames, hexlet, cources, lvl1, project",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -31,7 +31,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-eslint": "^8.2.5",
-    "eslint": "^5.1.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-babel": "^5.1.0"
