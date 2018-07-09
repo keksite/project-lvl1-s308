@@ -27,7 +27,7 @@ export const evenGame = (name) => {
     const answer = readlineSync.question('Answer is: ');
     if (isEven(number) === isCorrectAnswer(answer)) {
       console.log('Correct!');
-      counter++;
+      counter += 1;
     } else {
       console.log(`'${answer}'' is wrong answer ;(. Correct answer was '${isEven(number) === true ? 'yes' : 'no'}'.Let's try again,${name}!`);
       break;
