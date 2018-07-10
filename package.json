@@ -1,11 +1,12 @@
 {
   "name": "brain-games-keksite",
-  "version": "2.2.4",
+  "version": "5.0.0",
   "description": "brain games project for hexlet cources",
   "keywords": "braingames, hexlet, cources, lvl1, project",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
-    "brain-even": "dist/bin/brain-even.js"
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js"
   },
   "files": [
     "dist"
@@ -38,6 +39,7 @@
     "eslint-plugin-import": "^2.13.0"
   },
   "dependencies": {
+    "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.9"
   }
 }
