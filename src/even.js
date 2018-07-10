@@ -1,17 +1,21 @@
 import readlineSync from 'readline-sync';
 
+const isEven = number => (number % 2 === 0 ? 'yes' : 'no');
+
 const evenGame = (name) => {
-  for (let i = 0; i < 3; i += 1) {
+  const attemp = 3;
+  for (let i = 0; i < attemp; i += 1) {
     const question = Math.floor(Math.random() * (100 - 0)) + 0;
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Answer is: ');
-    const evenNumber = question % 2 === 0 ? 'yes' : 'no';
-    if (answer.replace(/\s+/g, '') !== evenNumber) {
-      return console.log(`${answer} is wrong answer ;(. Correct answer was ${evenNumber}.Let's try again,${name}!`);
+    const evenNumber = isEven(question);
+    if (answer !== evenNumber) {
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${evenNumber}.Let's try again,${name}!`);
+      return;
     }
     console.log('Correct!');
   }
-  return console.log(`Congratulations, ${name}`);
+  console.log(`Congratulations, ${name}`);
 };
 
 export default() => {
