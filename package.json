@@ -1,6 +1,6 @@
 {
   "name": "brain-games-keksite",
-  "version": "2.1.4",
+  "version": "2.2.4",
   "description": "brain games project for hexlet cources",
   "keywords": "braingames, hexlet, cources, lvl1, project",
   "bin": {
