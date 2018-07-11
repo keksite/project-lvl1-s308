@@ -9,9 +9,7 @@ export default (gameDesc, game) => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   for (let i = 0; i < rounds; i += 1) {
-    const { gameQuestion, gameCorrectAnswer } = game();
-    const question = gameQuestion;
-    const correctAnswer = gameCorrectAnswer;
+    const { question, correctAnswer } = game();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Answer is: ');
     if (userAnswer !== correctAnswer) {
