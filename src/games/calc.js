@@ -2,37 +2,37 @@ import readlineSync from 'readline-sync';
 import {
   cons, car, cdr,
 } from 'hexlet-pairs';
+import getRandomInt from '../utils/getRandomInt';
 
-const getRandom = (min, max) => Math.floor(Math.random() * (max - min) + min);
+const operations = ['+', '-', '*'];
+const rounds = 3;
+const minNum = 1;
+const maxNum = 100;
 
-const getRandomOperation = () => {
-  const operations = ['+', '-', '*'];
-  const randomOperation = getRandom(0, operations.length);
-  return operations[randomOperation];
-};
-
-
-const mathResult = (numbers, operation) => {
-  const num1 = car(numbers);
-  const num2 = cdr(numbers);
-  let result = 0;
-  if (operation === '+') result = num1 + num2;
-  if (operation === '-') result = num1 - num2;
-  if (operation === '*') result = num1 * num2;
-  return result;
+const mathResult = (num1, num2) => {
+  const operation = operations[getRandomInt(0, operations.length)];
+  switch (operation) {
+    case ('-'):
+      return cons(`${num1} - ${num2}`, (num1 - num2));
+    case '+':
+      return cons(`${num1} + ${num2}`, (num1 + num2));
+    case '*':
+      return cons(`${num1} * ${num2}`, (num1 * num2));
+    default:
+      break;
+  }
 };
 
 const calcGame = (name) => {
-  const attemp = 3;
-  for (let i = 0; i < attemp; i += 1) {
-    const randomNumbers = cons(getRandom(1, 11), getRandom(1, 11));
-    const randomOperation = getRandomOperation();
-    const question = `${car(randomNumbers)}${randomOperation}${cdr(randomNumbers)}`;
-    const correctAnswer = mathResult(randomNumbers, randomOperation);
+  for (let i = 0; i < rounds; i += 1) {
+    const num1 = getRandomInt(minNum, maxNum);
+    const num2 = getRandomInt(minNum, maxNum);
+    const correctAnswer = mathResult(num1, num2);
+    const question = `${car(correctAnswer)}`;
     console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
-    if (answer !== String(correctAnswer)) {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.Let's try again,${name}!`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer !== String(cdr(correctAnswer))) {
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${cdr(correctAnswer)}.Let's try again,${name}!`);
       return;
     }
     console.log('Correct!');
@@ -41,7 +41,10 @@ const calcGame = (name) => {
 };
 
 export default() => {
-  console.log('Welcome to the Brain Games!\nWhat is the result of the expression?');
+  const greeting = 'Welcome to the Brain Games!';
+  const gameDesc = 'What is the result of the expression?';
+  console.log(greeting);
+  console.log(gameDesc);
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   calcGame(name);
