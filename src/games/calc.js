@@ -11,16 +11,20 @@ const maxNum = 100;
 
 const mathResult = (num1, num2) => {
   const operation = operations[getRandomInt(0, operations.length)];
+  let result;
   switch (operation) {
     case ('-'):
-      return cons(`${num1} - ${num2}`, (num1 - num2));
-    case '+':
-      return cons(`${num1} + ${num2}`, (num1 + num2));
-    case '*':
-      return cons(`${num1} * ${num2}`, (num1 * num2));
-    default:
+      result = cons(`${num1} - ${num2}`, (num1 - num2));
       break;
+    case '+':
+      result = cons(`${num1} + ${num2}`, (num1 + num2));
+      break;
+    case '*':
+      result = cons(`${num1} * ${num2}`, (num1 * num2));
+      break;
+    default:
   }
+  return result;
 };
 
 const calcGame = (name) => {
