@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import {
   cons, car, cdr,
 } from 'hexlet-pairs';
-import getRandomInt from '../utils/getRandomInt';
+import getRandomInt from '../utils';
 
 const operations = ['+', '-', '*'];
 const rounds = 3;
