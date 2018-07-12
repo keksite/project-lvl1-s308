@@ -18,12 +18,12 @@ const getAnswer = (question) => {
     number = Math.floor(number / 10);
   }
   const average = sum / length;
-  const diff = sum - Math.floor(average) * length;
+  const remainder = sum - Math.floor(average) * length;
   for (let i = 0; i < length; i += 1) {
     array.push(Math.floor(average));
   }
-  if (diff !== 0) {
-    for (let i = diff; i > 0; i -= 1) {
+  if (remainder !== 0) {
+    for (let i = remainder; i > 0; i -= 1) {
       array[i] += 1;
     }
   }
