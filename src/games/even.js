@@ -1,7 +1,7 @@
 import getRandomInt from '../utils';
 import engine from '..';
 
-const gameDesc = 'Answer "yes" if number even otherwise answer "no"';
+const description = 'Answer "yes" if number even otherwise answer "no"';
 
 const isEven = number => number % 2 === 0;
 
@@ -11,4 +11,4 @@ const evenGame = () => {
   return { question, correctAnswer };
 };
 
-export default() => engine(gameDesc, evenGame);
+export default() => engine(description, evenGame);

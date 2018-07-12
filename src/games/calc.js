@@ -7,7 +7,7 @@ import engine from '..';
 const operations = ['+', '-', '*'];
 const minNum = 1;
 const maxNum = 100;
-const gameDesc = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
 const mathResult = (num1, num2) => {
   const operation = operations[getRandomInt(0, operations.length)];
@@ -36,4 +36,4 @@ const calcGame = () => {
   return { question, correctAnswer };
 };
 
-export default() => engine(gameDesc, calcGame);
+export default() => engine(description, calcGame);

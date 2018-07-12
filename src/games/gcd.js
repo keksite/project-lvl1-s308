@@ -3,8 +3,7 @@ import engine from '..';
 
 const minNum = 1;
 const maxNum = 100;
-const gameDesc = 'Find the greatest common divisor of given numbers.';
-
+const description = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (a, b) => {
   if (b === 0) {
@@ -21,5 +20,4 @@ const gcdGame = () => {
   return { question, correctAnswer };
 };
 
-
-export default() => engine(gameDesc, gcdGame);
+export default() => engine(description, gcdGame);
