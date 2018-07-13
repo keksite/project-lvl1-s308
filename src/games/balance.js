@@ -5,40 +5,36 @@ const minNum = 100;
 const maxNum = 10000;
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getAnswer = (question) => {
-  let number = String(question);
-  const { length } = number;
+const getSum = (num) => {
+  let a = num;
   let sum = 0;
-  let result = '';
-  const array = [];
+  while (a > 0) {
+    sum += a % 10;
+    a = Math.floor(a / 10);
+  }
+  return sum;
+};
 
-  while (number > 0) {
-    const temp = number % 10;
-    sum += temp;
-    number = Math.floor(number / 10);
-  }
-  const average = sum / length;
-  const remainder = sum - Math.floor(average) * length;
-  for (let i = 0; i < length; i += 1) {
-    array.push(Math.floor(average));
-  }
-  if (remainder !== 0) {
-    for (let i = remainder; i > 0; i -= 1) {
-      array[i] += 1;
+const getCorrectAnswer = (question) => {
+  const answerLegth = String(question).length;
+  const sum = getSum(question);
+  let result = '';
+  const average = Math.floor(sum / answerLegth);
+  const remainder = sum % answerLegth;
+  for (let i = answerLegth; i > 0; i -= 1) {
+    if (remainder < i) {
+      result += `${average}`;
+    } else {
+      result += `${average + 1}`;
     }
   }
-  array.sort();
-  Object.keys(array).forEach((key) => {
-    result += array[key];
-  });
   return result;
 };
 
 const balanceGame = () => {
   const question = getRandomInt(minNum, maxNum);
-  const correctAnswer = getAnswer(question);
+  const correctAnswer = getCorrectAnswer(question);
   return { question, correctAnswer };
 };
-
 
 export default() => engine(description, balanceGame);
