@@ -1,6 +1,6 @@
 {
   "name": "brain-games-keksite",
-  "version": "7.1.0",
+  "version": "8.0.0",
   "description": "brain games project for hexlet cources",
   "keywords": "braingames, hexlet, cources, lvl1, project",
   "bin": {
@@ -8,7 +8,8 @@
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
-    "brain-balance": "dist/bin/brain-balance.js"
+    "brain-balance": "dist/bin/brain-balance.js",
+    "brain-progression": "dist/bin/brain-progression.js"
   },
   "files": [
     "dist"

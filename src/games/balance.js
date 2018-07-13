@@ -16,12 +16,12 @@ const getSum = (num) => {
 };
 
 const getCorrectAnswer = (question) => {
-  const answerLegth = String(question).length;
+  const answerLength = String(question).length;
   const sum = getSum(question);
   let result = '';
-  const average = Math.floor(sum / answerLegth);
-  const remainder = sum % answerLegth;
-  for (let i = answerLegth; i > 0; i -= 1) {
+  const average = Math.floor(sum / answerLength);
+  const remainder = sum % answerLength;
+  for (let i = answerLength; i > 0; i -= 1) {
     if (remainder < i) {
       result += `${average}`;
     } else {
